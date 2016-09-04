@@ -5,7 +5,7 @@
 
 
 # 构建
-通过命令`make`进行项目构建。构建后会在当前目录生成 `chat_server` 和 'chat_client'两个可执行文件。
+通过命令`make`进行项目构建。构建后会在当前目录生成 `chat_server` 和 `chat_client`两个可执行文件。
 
 ```bash
 	make

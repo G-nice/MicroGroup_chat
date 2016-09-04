@@ -52,8 +52,8 @@ $(OBJDIR_DEBUG)/signal_handle.o: signal_handle.cpp
 	$(CXX) $(CFLAGS_DEBUG) -c signal_handle.cpp -o $(OBJDIR_DEBUG)/signal_handle.o
 
 clean_debug: 
-	-rm -f $(OBJ_DEBUG) $(OUT_DEBUG)
-	-rm -rf $(OBJDIR_DEBUG)
+	- rm -f $(OBJ_DEBUG) $(OUT_DEBUG)
+	- rm -rf $(OBJDIR_DEBUG)
 
 before_release: 
 	test -d $(OBJDIR_RELEASE) || mkdir -p $(OBJDIR_RELEASE)
@@ -81,8 +81,8 @@ $(OBJDIR_RELEASE)/signal_handle.o: signal_handle.cpp
 	$(CXX) $(CFLAGS_RELEASE) -c signal_handle.cpp -o $(OBJDIR_RELEASE)/signal_handle.o
 
 clean_release: 
-	-rm -f $(OBJ_RELEASE) $(OUT_RELEASE)
-	-rm -rf $(OBJDIR_RELEASE)
+	- rm -f $(OBJ_RELEASE) $(OUT_RELEASE)
+	- rm -rf $(OBJDIR_RELEASE)
 
 .PHONY: before_debug after_debug clean_debug before_release after_release clean_release
 

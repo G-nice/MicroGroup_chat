@@ -33,8 +33,7 @@ clean_debug:
 	do \
 	    #@echo "making $@ in $$subdir"; \
 	    ( cd $$subdir && make clean_debug ) || exit 1; \
-	    #@echo "dddd"; \
-	    -rmdir -v $$subdir/obj/; \
+		rmdir -v $$subdir/obj/; \
 	done
 	
 	
@@ -45,6 +44,6 @@ clean_release:
 	do \
 	    #@echo "making $@ in $$subdir"; \
 	    ( cd $$subdir && make clean_release ) || exit 1; \
-	    -rmdir -v $$subdir/obj/; \
+		rmdir -v $$subdir/obj/; \
 	done
 

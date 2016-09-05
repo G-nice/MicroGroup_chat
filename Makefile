@@ -9,7 +9,7 @@ all: release
 
 .PHONY: clean clean_debug clean_release
 
-clean: clean_debug clean_release
+clean: clean_release clean_debug
 
 
 debug:

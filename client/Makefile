@@ -6,14 +6,14 @@ AR = ar
 LD = g++
 WINDRES = windres
 
-CFLAGS = -Wall -fexceptions
+CXXFLAGS = -Wall -fexceptions
 
 
-CFLAGS_DEBUG = $(CFLAGS) -g
+CXXFLAGS_DEBUG = $(CXXFLAGS) -g
 OBJDIR_DEBUG = ./obj/Debug
 OUT_DEBUG = ../chat_client
 
-CFLAGS_RELEASE = $(CFLAGS) -O2
+CXXFLAGS_RELEASE = $(CXXFLAGS) -O2
 OBJDIR_RELEASE = obj/Release
 OUT_RELEASE = ../chat_client
 
@@ -37,19 +37,19 @@ out_debug: before_debug $(OBJ_DEBUG)
 	$(LD) -o $(OUT_DEBUG) $(OBJ_DEBUG)
 
 $(OBJDIR_DEBUG)/chat_client.o: chat_client.cpp
-	$(CXX) $(CFLAGS_DEBUG) -c chat_client.cpp -o $(OBJDIR_DEBUG)/chat_client.o
+	$(CXX) $(CXXFLAGS_DEBUG) -c chat_client.cpp -o $(OBJDIR_DEBUG)/chat_client.o
 
 $(OBJDIR_DEBUG)/epoll.o: epoll.cpp
-	$(CXX) $(CFLAGS_DEBUG) -c epoll.cpp -o $(OBJDIR_DEBUG)/epoll.o
+	$(CXX) $(CXXFLAGS_DEBUG) -c epoll.cpp -o $(OBJDIR_DEBUG)/epoll.o
 
 $(OBJDIR_DEBUG)/g_lib.o: g_lib.cpp
-	$(CXX) $(CFLAGS_DEBUG) -c g_lib.cpp -o $(OBJDIR_DEBUG)/g_lib.o
+	$(CXX) $(CXXFLAGS_DEBUG) -c g_lib.cpp -o $(OBJDIR_DEBUG)/g_lib.o
 
 $(OBJDIR_DEBUG)/packet.o: packet.cpp
-	$(CXX) $(CFLAGS_DEBUG) -c packet.cpp -o $(OBJDIR_DEBUG)/packet.o
+	$(CXX) $(CXXFLAGS_DEBUG) -c packet.cpp -o $(OBJDIR_DEBUG)/packet.o
 
 $(OBJDIR_DEBUG)/signal_handle.o: signal_handle.cpp
-	$(CXX) $(CFLAGS_DEBUG) -c signal_handle.cpp -o $(OBJDIR_DEBUG)/signal_handle.o
+	$(CXX) $(CXXFLAGS_DEBUG) -c signal_handle.cpp -o $(OBJDIR_DEBUG)/signal_handle.o
 
 clean_debug: 
 	- rm -f $(OBJ_DEBUG) $(OUT_DEBUG)
@@ -66,19 +66,19 @@ out_release: before_release $(OBJ_RELEASE)
 	$(LD) -o $(OUT_RELEASE) $(OBJ_RELEASE)
 
 $(OBJDIR_RELEASE)/chat_client.o: chat_client.cpp
-	$(CXX) $(CFLAGS_RELEASE) -c chat_client.cpp -o $(OBJDIR_RELEASE)/chat_client.o
+	$(CXX) $(CXXFLAGS_RELEASE) -c chat_client.cpp -o $(OBJDIR_RELEASE)/chat_client.o
 
 $(OBJDIR_RELEASE)/epoll.o: epoll.cpp
-	$(CXX) $(CFLAGS_RELEASE) -c epoll.cpp -o $(OBJDIR_RELEASE)/epoll.o
+	$(CXX) $(CXXFLAGS_RELEASE) -c epoll.cpp -o $(OBJDIR_RELEASE)/epoll.o
 
 $(OBJDIR_RELEASE)/g_lib.o: g_lib.cpp
-	$(CXX) $(CFLAGS_RELEASE) -c g_lib.cpp -o $(OBJDIR_RELEASE)/g_lib.o
+	$(CXX) $(CXXFLAGS_RELEASE) -c g_lib.cpp -o $(OBJDIR_RELEASE)/g_lib.o
 
 $(OBJDIR_RELEASE)/packet.o: packet.cpp
-	$(CXX) $(CFLAGS_RELEASE) -c packet.cpp -o $(OBJDIR_RELEASE)/packet.o
+	$(CXX) $(CXXFLAGS_RELEASE) -c packet.cpp -o $(OBJDIR_RELEASE)/packet.o
 
 $(OBJDIR_RELEASE)/signal_handle.o: signal_handle.cpp
-	$(CXX) $(CFLAGS_RELEASE) -c signal_handle.cpp -o $(OBJDIR_RELEASE)/signal_handle.o
+	$(CXX) $(CXXFLAGS_RELEASE) -c signal_handle.cpp -o $(OBJDIR_RELEASE)/signal_handle.o
 
 clean_release: 
 	- rm -f $(OBJ_RELEASE) $(OUT_RELEASE)
